@@ -1,0 +1,16 @@
+.header{
+    height: 60px;
+    position: sticky;
+    width:100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #131621;
+}
+.header__imgLogo{
+    width: 100px;
+    object-fit: contain;
+    margin: 0 20px;
+    margin-top: 15px;
+}
