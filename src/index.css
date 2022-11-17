@@ -2,3 +2,10 @@
     margin:0px;
     padding:0px;
 }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eaeded;
+}
+.margin{
+    margin: 0px 1.5%;
+}

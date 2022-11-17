@@ -1,0 +1,83 @@
+.ProductBox{
+    background-color: #fff;
+    min-width: 300px;
+    width: 24%;
+    margin:5px;
+    height: 420px;
+    z-index: 10;
+    /* margin: 0px 10px; */
+}
+.productBox__title{
+    margin: 10px 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.productBox__images{
+    display: flex;
+    flex-wrap: wrap;
+}
+.productBox__imageBox{
+    margin: 5px;
+    width: 46%;
+}
+.productBox__imageBox>img{
+    width: 100%;
+}
+.productBox__productdetails{
+    font-size: 15px;
+    font-weight: 400;
+}
+.productbox__clouser{
+    margin: 5px;
+}
+.productbox__clouser>a{
+    text-decoration: none;
+}
+.productbox__clouser>a:hover{
+    text-decoration: underline;
+    color: rgb(173, 32, 32);
+}
+.ProductBox__message{
+    margin: 6% 0;
+    width: 100%;
+    height: 30%;
+    background-color: #fff;
+}
+.PrdoductBox__ads{
+    height: 60%;
+    overflow: hidden;
+    background-color: red;
+}
+.PrdoductBox__ads>img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    object-fit: cover;
+}
+.ProductBox__adsBox{
+    background-color: transparent;
+}
+.primeBox{
+    margin: 5px;
+    width: 48%;
+    height: 420px;
+    min-width: 300px;
+    overflow: hidden;
+    
+}
+.primeBox>img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    
+}
+/* @media(max-width:1000px){
+    .ProductBox__hide1{
+        display: none;
+    }
+}
+@media(max-width:576px){
+    .ProductBox__hide {
+        display: none;
+    }
+} */
