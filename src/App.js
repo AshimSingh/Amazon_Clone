@@ -4,6 +4,7 @@ import Header from './components/Header'
 import CartPage from './pages/cart'
 import Error from './pages/error'
 import Footer from './components/Footer'
+import SelectedProductPage from './pages/SelectedProductPage'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 const App = ()=>{
     return(
@@ -14,7 +15,7 @@ const App = ()=>{
                 <Routes>
                     <Route exact path='/' element={<Home/>} ></Route>
                     <Route  path='/cart' element={<CartPage/>} ></Route>
-                    <Route path="/product/:id" element={<CartPage/>}></Route>
+                    <Route path="/product/:id" element={<SelectedProductPage/>}></Route>
                     <Route path="*" element={<Error/>}></Route>
                 </Routes>
                 <Footer/>

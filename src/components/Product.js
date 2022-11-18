@@ -1,5 +1,6 @@
 import React from 'react'
 import './ProductBox.css'
+import { Link } from 'react-router-dom'
 const ProductBox = () => {
   const data =[
     {
@@ -69,13 +70,19 @@ const ProductBox = () => {
 export default ProductBox
 function ProductBox__card(){
   return(
-    <div className='productBox__imageBox'>
-          <img src='https://images-eu.ssl-images-amazon.com/images/G/31/AmazonPay/Rewards/GWBTFPercolateCards/PC_Quard_Card_186X116_ScratchCard._SY116_CB627364845_.jpg'
+    <>
+    
+      <div className='productBox__imageBox'>
+         <Link to="/product/11"> 
+          <img className='productBox_image' src='https://images-eu.ssl-images-amazon.com/images/G/31/AmazonPay/Rewards/GWBTFPercolateCards/PC_Quard_Card_186X116_ScratchCard._SY116_CB627364845_.jpg'
           alt='images'></img>
+          </Link>
           <div className='productBox__productdetails'>
             Claim your scratch cards
           </div>
+         
         </div>
+        </>
   )
 }
 

@@ -16,12 +16,18 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+
 .productBox__imageBox{
     margin: 5px;
     width: 46%;
+    cursor: pointer;
 }
 .productBox__imageBox>img{
     width: 100%;
+}
+.productBox_image{
+    width: 100%; 
 }
 .productBox__productdetails{
     font-size: 15px;
