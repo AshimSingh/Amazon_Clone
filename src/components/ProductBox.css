@@ -25,9 +25,11 @@
 }
 .productBox__imageBox>img{
     width: 100%;
+    
 }
 .productBox_image{
     width: 100%; 
+    height: 100px;
 }
 .productBox__productdetails{
     font-size: 15px;

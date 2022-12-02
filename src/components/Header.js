@@ -7,19 +7,43 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CloseIcon from '@mui/icons-material/Close';
 import {Link} from 'react-router-dom'
+import { getAuth, signOut } from "firebase/auth";
+import {useSelector,useDispatch} from 'react-redux'
+import app from '../fire';
 const Header = () => {
+  const auth=getAuth(app)
+  const user=useSelector((state)=>state.object.user)
+  const dispatch=useDispatch()
+  const object = useSelector((state)=>state.object)
   const menu=()=>{
       const drawer = document.querySelector('.drawer')
       drawer.style.display ="block"
       const cover=document.querySelector('.header__cover')
       cover.style.display="inline-block"
-      console.log("menu")
   }
   const close_Menu=()=>{
     const cover=document.querySelector('.header__cover')
       cover.style.display="none"
     const drawer = document.querySelector('.drawer')
     drawer.style.display ="none"
+  }
+  const Signout=()=>{
+    if(user){
+      signOut(auth).then(() => {
+  // Sign-out successful.
+  dispatch({
+    type:"ADD_USER",
+    data:null
+  })
+  alert("Sign out sucessfull")
+}).catch((error) => {
+  // An error happened.
+  alert(error)
+});
+    }
+    else{
+      
+    }
   }
   return (
     <>
@@ -71,16 +95,20 @@ const Header = () => {
         </div>
         </div>
 
-
+        <Link to={!user&& "/signin" }>
         <div className='header__navItem box show impshow'>
-          <div className='header__ItemPrefix'>
-            Hello SignIN
+          
+            <div className='header__ItemPrefix'>
+            Hello {user?user.email.slice(0,8)+"...":"Guest"}
+           {/* {user.displayName?user.displayName.slice(0,8):"Guest"} */}
+            </div>          
+          
+        <div className='header__ItemSuffix' onClick={()=>Signout()}>
+          {/* Accounts & Lists */}
+          {user?"Sign Out":"Sign In"}
         </div>
-        <div className='header__ItemSuffix'>
-          Accounts & Lists
         </div>
-        </div>
-
+        </Link>
         <div className='header__navItem box'>
           <div className='header__ItemPrefix'>
             Returns
@@ -101,7 +129,9 @@ const Header = () => {
         <Link className='link' to="/cart">
           <div className='header__navItem box show impshow'>
           <div className='header__ItemPrefix'>
-            0
+            {object.basket.length}
+            {/* {basket.state.basket.length} */}
+            {/* {basket.length} */}
         </div>
           <dvi className='header__ItemSuffix'><ShoppingCartOutlinedIcon/> Cart</dvi>
         </div>

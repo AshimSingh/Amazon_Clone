@@ -27,13 +27,15 @@ const Footer = () => {
        <div className='container-fluid footer__container d-flex align-items-center'>
           <div className='container text-light mt-3' >
           <div className='row'>
-          {
+          
+            {
             data.map((m)=>{
               return(
                 <Footer__content {...m} />
               )
             })
           }
+          
           </div>
           </div>
        </div>
@@ -43,7 +45,7 @@ const Footer = () => {
 const Footer__content=({title,sub})=>{
       return(
         <>
-          <div className='col-md-3 col-sm-6'>
+          <div className='col-md-3 col-6 mt-2'>
             <div className='footer__title'>
                 {title}
               </div>
