@@ -1,0 +1,45 @@
+.pSlider{
+    height: 10%;
+    width: 92%;
+    background-color: #fff;
+}
+.Pslider__box{
+    width: 90%;
+    cursor: pointer;
+}
+.Pslider__img{
+    width: 100%;
+    background-color: #eaeded;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+}
+.Pslider__img>img{
+    width: 90%;
+    height: 150px;
+    background-color: grey;
+}
+.Pslider__dis{
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    
+}
+.Pslider__dis>span{
+    background-color: rgb(100, 10, 10);
+    padding: 2px 5px;
+    margin: 0 8px;
+    color: white;
+}
+.Pslider__dis>p{
+    margin: 2px 0;
+    color: rgb(100, 10, 10);
+}
+.NextArrow{
+    height: 80px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}

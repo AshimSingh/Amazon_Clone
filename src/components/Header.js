@@ -9,12 +9,20 @@ import CloseIcon from '@mui/icons-material/Close';
 import {Link} from 'react-router-dom'
 import { getAuth, signOut } from "firebase/auth";
 import {useSelector,useDispatch} from 'react-redux'
+import { useState } from 'react';
 import app from '../fire';
 const Header = () => {
+  const [search,setSearch]=useState('')
   const auth=getAuth(app)
   const user=useSelector((state)=>state.object.user)
   const dispatch=useDispatch()
   const object = useSelector((state)=>state.object)
+  const searchBox=(e)=>{
+    e.preventDefault()
+    setSearch(e.target.value)
+    
+  }
+  
   const menu=()=>{
       const drawer = document.querySelector('.drawer')
       drawer.style.display ="block"
@@ -79,6 +87,9 @@ const Header = () => {
           <option value="All">Amazon Fashion</option>
         </select>
         <input type="text"
+        placeholder='Search Products'
+        value={search}
+        onChange={searchBox}
           // onChange={handelSearch}
         ></input>
         <button className='header__searchIcon'><SearchIcon/></button>
@@ -99,7 +110,7 @@ const Header = () => {
         <div className='header__navItem box show impshow'>
           
             <div className='header__ItemPrefix'>
-            Hello {user?user.email.slice(0,8)+"...":"Guest"}
+            Hello {user?user.displayName.slice(0,8)+"...":"Guest"}
            {/* {user.displayName?user.displayName.slice(0,8):"Guest"} */}
             </div>          
           
@@ -139,8 +150,6 @@ const Header = () => {
       </div>
     
     </div> 
-    
-    
     <div className='header__mobileview show'>
       <div className='header__search show'>
         <input type="text" placeholder='Search your product here'

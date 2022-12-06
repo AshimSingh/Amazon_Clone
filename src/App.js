@@ -11,6 +11,8 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import app from './fire'
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 const App = ()=>{
     const dispatch=useDispatch()
     const auth=getAuth(app)

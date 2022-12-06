@@ -62,12 +62,15 @@
     height: 37px;
     outline: none;
 }
+.search__item{
+    width: ;
+}
 .header__select{
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     outline: none;
     font-weight: 500;
-    width: 40px;
+    width: 48px;
     height: 37px;
 }
 /* .header__search >input:focus{

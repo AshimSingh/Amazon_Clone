@@ -7,6 +7,7 @@ export const useFetch=(url)=>{
     const [error,setError]=useState([])
     const[mensClothing,setClothing]=useState([])
     const[womensClothing,setWomenCloth]=useState([])
+    const[sliderProduct,setSlider]=useState([])
     useEffect(()=>{
         fetchApi()
     },[url])
@@ -29,6 +30,8 @@ export const useFetch=(url)=>{
         else if(url==="https://fakestoreapi.com/products/category/women's clothing"){
             setWomenCloth(resp.data)
         }
+        else if(url==="https://fakestoreapi.com/products")
+            setSlider(resp.data)
 }
    catch (error){
     setError(error.message)
@@ -50,5 +53,8 @@ export const useFetch=(url)=>{
     }
     else if(url==="https://fakestoreapi.com/products/category/women's clothing"){
         return {womensClothing,error}
+    }
+    else if(url==="https://fakestoreapi.com/products"){
+        return{sliderProduct,error}
     }
 }

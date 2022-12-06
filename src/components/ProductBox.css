@@ -79,6 +79,10 @@
     object-fit: fill;
     
 }
+/* .Carousel{
+    background-color: transparent;
+    z-index: -40;
+} */
 /* @media(max-width:1000px){
     .ProductBox__hide1{
         display: none;

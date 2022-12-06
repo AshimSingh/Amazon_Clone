@@ -34,7 +34,6 @@ const Catogerylist = () => {
     <>
     <div className='container-fluid'>
         <div className='row margin d-flex justify-content-center'>
-          
           <ProductBox resp={response} title={"Keep Shopping for"}></ProductBox>
           <ProductBox resp={electronics.slice(0,4)} title={"Your Favriote Electronics"}></ProductBox>
           <ProductBox resp={data} title={"Shop & Pay | Earn rewards daily"}></ProductBox>
