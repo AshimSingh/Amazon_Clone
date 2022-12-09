@@ -6,6 +6,8 @@
     height: 100%;
     width: 70%;
     /* left: -71%; */
+    overflow-x: scroll;
+    position: fixed;
     display: none;
     /* left: 0; */
 }
@@ -20,7 +22,7 @@
     height: 60px;
     position: relative;
     padding-top: 30px;
-    left:70%;
+    left:60%;
 }
 .drawer__header2{
     padding-left: 20px;

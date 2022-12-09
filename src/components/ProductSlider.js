@@ -40,7 +40,6 @@ const ProductSlider = () => {
       prevArrow:<NextArrow/>
   }
   const {sliderProduct,serror}=useFetch("https://fakestoreapi.com/products")
-  console.log("Slider Product",sliderProduct)
   return (
     <div className='Container-fluid d-flex justify-content-center mb-5'>
         <div className='pSlider'>

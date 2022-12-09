@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Pagenotfound from '../components/pagenotfound'
 const Error = () => {
   return (
     <div>
-      <h1>Sorry page not found</h1>
+      <Pagenotfound/>
     </div>
   )
 }
