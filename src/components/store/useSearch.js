@@ -22,7 +22,6 @@ export const useSearch=(search)=>{
 //     setUrl(newurl+search)
 // }
     const Fetch=()=>{
-        console.log("url is ",url)
          axios
     .get("https://fakestoreapi.com/products/")
     .then(function (response) {

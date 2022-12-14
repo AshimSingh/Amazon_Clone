@@ -3,6 +3,7 @@ import {useState} from 'react'
 import app from '../fire'
 import { getAuth, createUserWithEmailAndPassword,updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import {useDispatch} from 'react-redux'
 const SignUp = () => {
    let history=useNavigate()
   const [people,setPeople]=useState({name:'',email:'',phone:'',password:''})
@@ -13,6 +14,7 @@ const SignUp = () => {
     const value=e.target.value
     setPeople({...people,[targ]:value})
   }
+  const dispatch=useDispatch()
   const onSub=(e)=>{
     e.preventDefault()
     if(people.name&&people.phone&&people.password){
@@ -20,13 +22,18 @@ const SignUp = () => {
     createUserWithEmailAndPassword(auth, people.email, people.password)
       .then((userCredential) => {
     // Signed in 
+
       const user = userCredential.user;
       updateProfile(user,{
         displayName:people.name
       })
       if(user){
+        dispatch({
+          type:"ADD_USER",
+          data:user
+        })
         alert("Account created sucessfully")
-        history(-1)
+        history("/")
       }
 
       setPeople({name:'',email:'',phone:'',password:''})

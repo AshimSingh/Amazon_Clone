@@ -21,7 +21,8 @@ const Carousel = () => {
     }
   return (
     <>
-      <div className='Carousel__image margin' id='carosel'>
+      <div className='container-fluid'>
+        <div className='Carousel__image margin' id='carosel'>
         {/* <img src="https://m.media-amazon.com/images/I/617Wo3jP3fL._SX3000_.jpg">
         </img> */}
           <Slider className='Slider' {...settings}>
@@ -33,6 +34,7 @@ const Carousel = () => {
             
           </Slider>
           
+      </div>
       </div>
       
     </>

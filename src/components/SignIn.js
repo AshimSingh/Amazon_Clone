@@ -6,7 +6,10 @@ import app from '../fire'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { getRedirectResult, GoogleAuthProvider,signInWithPopup,onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from 'react-router-dom'
+import {useDispatch} from 'react-redux'
 const SignIn = () => {
+  
+  const dispatch=useDispatch()
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
   const auth = getAuth(app);
@@ -18,10 +21,13 @@ const SignIn = () => {
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
     const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
     if(user){
+      dispatch({
+        type:'ADD_USER',
+        data:user,
+      })
       history('/')
     }
     // ...

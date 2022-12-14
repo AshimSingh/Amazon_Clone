@@ -147,8 +147,9 @@ const Header = () => {
         <div className='header__navItem box show impshow'>
           
             <div className='header__ItemPrefix'>
-            Hello {user?user.displayName.slice(0,8)+"...":"Guest"}
+            Hello {user?user.displayName+"...":"Guest"}
            {/* {user.displayName?user.displayName.slice(0,8):"Guest"} */}
+           {console.log(user)}
             </div>          
           
         <div className='header__ItemSuffix' onClick={()=>Signout()}>
@@ -187,8 +188,9 @@ const Header = () => {
       </div>
     
     </div> 
+    {/* mobile view starts form here */}
+    <div className='header__mobileview mt-3'></div>
     <div className='header__mobileview'>
-      
       <div className='header__search show'>
         <input type="text" placeholder='Search your product here'
         value={search}
@@ -248,7 +250,9 @@ const Header = () => {
         </div>
 
         <div className='header__secondnav'>
-        </div>    
+        </div>
+        <div className='header__secondnav'>
+        </div>   
     <Drawer close_menu={close_Menu} signOut={Signout}/>
     </div>
   )
